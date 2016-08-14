@@ -1,0 +1,38 @@
+digraph Alf {
+  size = "15";
+  node [ shape = record, style=filled, fillcolor="#efefef", fontname=Helvetica,
+         fontsize=10.5, fontcolor="#2b2b2b", height=0.25, width=1, penwidth=0 ];
+  edge [ arrowhead=normal, arrowsize=0.5, len=0.5, fontcolor="#00aeef",
+         fontname=Helvetica, fontsize=9.5 ];
+
+  root [ label ="OpenStack 技能图谱" ];
+  1 [ style=invis, label="" ];
+  root->1 [ headclip=false,arrowhead=none ] ;
+
+/*  {
+    rank=same ;
+    1 ; "1b" ;
+  }
+*/
+
+  1->"基础知识" [ tailclip=false ];
+  1->"操作系统" [ tailclip=false ];
+  1->"网络" [ tailclip=false ];
+  1->"存储" [ tailclip=false ];
+  1->"高可用集群" [ tailclip=false ];
+  1->"分布式集群" [ tailclip=false ];
+  1->"Fuel安装" [ tailclip=false ];
+
+  2 [style=invis, label="" ];
+   "操作系统" -> 2 [ headclip=false,arrowhead=none ];
+
+  2->"CentOS" [ tailclip=false ];
+  2->"Ubuntu" [ tailclip=false ];
+  
+  highavailable [style=invis, label="" ];
+   "高可用集群" -> highavailable [ headclip=false,arrowhead=none ];
+  highavailable->"Pacemaker" [ tailclip=false ];
+  highavailable->"HaProxy" [ tailclip=false ];
+  highavailable->"MySQL" [ tailclip=false ];
+  
+}
