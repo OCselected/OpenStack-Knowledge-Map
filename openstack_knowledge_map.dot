@@ -23,16 +23,24 @@ digraph Alf {
   1->"分布式集群" [ tailclip=false ];
   1->"Fuel安装" [ tailclip=false ];
 
+  basic [style=invis, label="" ];
+  "基础知识" -> basic [ headclip=false,arrowhead=none ];
+
+  basic->"Oslo" [ tailclip=false ];
+  basic->"SQLAlchemy" [ tailclip=false ];
+
   2 [style=invis, label="" ];
    "操作系统" -> 2 [ headclip=false,arrowhead=none ];
 
-  2->"CentOS" [ tailclip=false ];
+  2->"Red Hat/CentOS" [ tailclip=false ];
   2->"Ubuntu" [ tailclip=false ];
-  
+  2->"openSUSE" [ tailclip=false ];  
+
   highavailable [style=invis, label="" ];
    "高可用集群" -> highavailable [ headclip=false,arrowhead=none ];
   highavailable->"Pacemaker" [ tailclip=false ];
   highavailable->"HaProxy" [ tailclip=false ];
   highavailable->"MySQL" [ tailclip=false ];
+  highavailable->"Senlin" [ tailclip=false ];
   
 }
